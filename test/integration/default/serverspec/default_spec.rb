@@ -1,5 +1,3 @@
-$node = json('/tmp/node.json')
-
 describe package('vim-minimal') do
   it { should be_installed }
   its('version') { should eq "#{$node['vim']['version']}" }

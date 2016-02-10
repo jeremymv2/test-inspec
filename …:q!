@@ -1,0 +1,4 @@
+test/integration/default/serverspec/default_spec.rb|79 warning| ambiguous first argument; put parentheses or even spaces
+test/integration/default/serverspec/default_spec.rb|79 warning| unknown regexp option - h
+test/integration/default/serverspec/default_spec.rb|79 error| unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+test/integration/default/serverspec/default_spec.rb|80 error| unexpected ')', expecting '}'

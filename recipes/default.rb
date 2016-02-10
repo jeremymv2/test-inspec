@@ -35,10 +35,7 @@ firewall_rule 'localhost tcp' do
   action :create
 end
 
-cookbook_file 'node.json' do
-  path '/tmp/node.json'
+output="#{Chef::JSONCompat.to_json_pretty(node.to_hash)}"
+file '/tmp/node.json' do
+  content output
 end
-#output="#{Chef::JSONCompat.to_json_pretty(node.to_hash)}"
-#file '/tmp/node.json' do
-#  content output
-#end
