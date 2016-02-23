@@ -1,16 +1,16 @@
 describe package('vim-minimal') do
   it { should be_installed }
-  its('version') { should eq "#{$node['vim']['version']}" }
+  its('version') { should eq node.value(['vim','version']) }
+end
+
+describe command('/usr/sbin/sestatus -v') do
+  its('stdout') { should match('Current mode:\s.*?permissive') }
 end
 
 describe file('/etc/sudoers') do
   its('content') { should match('admin ALL=\(ALL\) NOPASSWD:ALL') }
   its('content') { should match('wheel ALL=\(ALL\) NOPASSWD:ALL') }
   its('content') { should match('Dev-Ops ALL=\(ALL\) NOPASSWD:ALL') }
-end
-
-describe command('/usr/sbin/sestatus -v') do
-  its('stdout') { should match('Current mode:\s.*?permissive') }
 end
 
 describe file('/tmp/client.rb') do
