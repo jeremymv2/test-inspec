@@ -34,6 +34,25 @@ suites:
     run_list:
       - recipe[test-inspec::profile]
 ```
+
+Verify as usual that your profile is valid:
+```
+$ inspec check test/integration/profile
+Summary
+-------
+Location: test/integration/profile
+Profile: myprofile
+Controls: 6
+Timestamp: 2016-02-23T11:09:07-05:00
+Valid: true
+
+Errors
+------
+
+Warnings
+--------
+```
+
 As mentioned, one added benefit of embedded profiles is that you gain the ability to write custom libraries.
 Here's an example of how that can be useful:
 
