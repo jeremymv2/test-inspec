@@ -1,5 +1,10 @@
-#class NodeAttributes < Inspec::Resources::JsonConfig
-class NodeAttributes < JsonConfig
+begin
+  klas = Inspec::Resources::JsonConfig
+rescue
+  klas = JsonConfig
+end
+
+class NodeAttributes < klas
   name 'node'
   def initialize
     super('/tmp/node.json')
